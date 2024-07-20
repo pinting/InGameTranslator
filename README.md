@@ -35,7 +35,7 @@ MakeSpriteFont "Consolas" /characterregion:0x0-0xFF
 /characterregion:0x25A0 font.spritefont
 ```
 
-_(optional)_ Build the DirectX hook. In the `DirectXHook` directory, using `Visual Studio 2022 Developer Command Prompt v17.10.3` (or newer), execute `MSBuild /p:Configuration=Release`. Copy the `d3d11.dll` next to a DX11 or DX12 application.
+_(optional)_ Build the DirectX hook. In the `DirectXHook` directory, using `Visual Studio 2022 Developer Command Prompt v17.10.3` (or newer), execute `MSBuild -t:restore,build /p:Configuration=Release /p:RestorePackagesConfig=true`. Copy the `d3d11.dll` next to a DX11 or DX12 application.
 
 To run the server, have Python `3.10.12` (or newer), install the dependencies by running `pip install -r requirements.txt` in the `Server` directory, launch the server with `python server.py`. WSL is supported with [GPU acceleration configured](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html). Have the latest Nvidia driver on the host!
 
